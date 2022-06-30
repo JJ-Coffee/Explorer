@@ -1,8 +1,8 @@
-Instalation needed :
+# Instalation needed :
 
 opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-mod-fileinfo php7-mod-mbstring iconv php7-mod-json
 
-Creat Menu:
+# Creat Menu:
 
 cat <<'EOF' >/usr/lib/lua/luci/controller/tinyfm.lua
 
@@ -18,7 +18,7 @@ EOF
 
 ==============================================================================================
 
-Create Template:
+# Create Template:
 
 cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
 
@@ -42,9 +42,9 @@ document.getElementById("tinyfm").src = "http://" + window.location.hostname + "
 
 EOF
 
-EDIT CONFIG UHHTTPD
+# EDIT CONFIG UHHTTPD
 
-# nano /etc/config/uhttpd
+nano /etc/config/uhttpd
 
 list interpreter '.php=/usr/bin/php-cgi'
 
