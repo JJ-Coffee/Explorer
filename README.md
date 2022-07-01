@@ -4,18 +4,18 @@ opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-m
 
 # Creat Menu:
 
- cat <<'EOF' >/usr/lib/lua/luci/controller/tinyfm.lua
+ "cat <<'EOF' >/usr/lib/lua/luci/controller/tinyfm.lua
  module("luci.controller.tinyfm", package.seeall)
  function index()
  entry({"admin","system","tinyfm"}, template("tinyfm"), _("File Explorer"), 55).leaf=true
  end
- EOF
+ EOF"
 
 ==============================================================================================
 
 # Create Template:
 
- cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
+ "cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
  <%+header%>
  <div class="cbi-map">
  <br>
@@ -25,7 +25,7 @@ opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-m
  document.getElementById("tinyfm").src = "http://" + window.location.hostname + "/tinyfm.php";
  </script>
  <%+footer%>
- EOF
+ EOF"
 
 # EDIT CONFIG UHHTTPD
 
