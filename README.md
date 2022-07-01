@@ -43,10 +43,16 @@ edit config php.ini:
 cd
 nano /etc/php.ini
 ```
+post_max_size = 256M
+upload_max_filesize = 256M
+save
 
-
+edit config uhttpd:
+```yaml
 nano /etc/config/uhttpd
+```
+add this text on config uhttpd 'main'
 ```yaml
 list interpreter '.php=/usr/bin/php-cgi'
 ```
-
+save and reboot
