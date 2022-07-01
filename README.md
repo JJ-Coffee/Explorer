@@ -1,3 +1,5 @@
+# FILE MANAGER FOR OPENWRT
+
 # Instalation needed :
 ```yaml
 opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-mod-fileinfo php7-mod-mbstring iconv php7-mod-json
@@ -11,9 +13,6 @@ entry({"admin","system","tinyfm"}, template("tinyfm"), _("File Explorer"), 55).l
 end
 EOF
 ```
-
-==============================================================================================
-
 # Create Template:
 ```yaml
 cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
@@ -29,7 +28,7 @@ document.getElementById("tinyfm").src = "http://" + window.location.hostname + "
 EOF
 ```
 
-# EDIT CONFIG UHHTTPD
+# EDIT CONFIG UHTTPD
 
 nano /etc/config/uhttpd
 ```yaml
