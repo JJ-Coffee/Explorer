@@ -1,7 +1,7 @@
 # Instalation needed :
-
+```yaml
 opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-mod-fileinfo php7-mod-mbstring iconv php7-mod-json
-
+```
 # Creat Menu:
 
  "cat <<'EOF' >/usr/lib/lua/luci/controller/tinyfm.lua
