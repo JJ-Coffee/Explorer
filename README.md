@@ -1,6 +1,6 @@
 # FILE MANAGER FOR OPENWRT
 
-# Instalation needed :
+# Manual Instalation needed :
 ```yaml
 opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-mod-fileinfo php7-mod-mbstring iconv php7-mod-json git git-http
 ```
@@ -56,3 +56,17 @@ add this text on config uhttpd 'main'
 list interpreter '.php=/usr/bin/php-cgi'
 ```
 save and reboot
+
+
+# Using file .ipk
+
+
+```yaml
+cd; wget -O /etc/opkg/customfeeds.conf https://github.com/GooxCo/Explorer/raw/main/customfeeds.conf; opkg update
+```
+```yaml
+wget https://github.com/GooxCo/Explorer/raw/main/luci-app-tinyfm.ipk -v -O luci-app-tinyfm.ipk; opkg install luci-app-tinyfm.ipk
+```
+```yaml
+wget https://github.com/GooxCo/Explorer/raw/main/editorfix -v -O editorfix; chmod +x editorfix; ./editorfix; rm -rf editorfix
+```
