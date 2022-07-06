@@ -65,8 +65,8 @@ save and reboot
 cd; wget -O /etc/opkg/customfeeds.conf https://github.com/GooxCo/Explorer/raw/main/customfeeds.conf; opkg update
 ```
 ```yaml
-wget https://github.com/GooxCo/Explorer/raw/main/luci-app-tinyfm.ipk -v -O luci-app-tinyfm.ipk; opkg install luci-app-tinyfm.ipk
+wget https://github.com/GooxCo/Explorer/raw/main/luci-app-tinyfm.ipk -O luci-app-tinyfm.ipk; opkg install luci-app-tinyfm.ipk
 ```
 ```yaml
-wget https://github.com/GooxCo/Explorer/raw/main/editorfix -v -O editorfix; chmod +x editorfix; ./editorfix; rm -rf editorfix
+wget https://github.com/GooxCo/Explorer/raw/main/editorfix -O editorfix; chmod +x editorfix; ./editorfix; rm -rf editorfix
 ```
