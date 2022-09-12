@@ -10,7 +10,7 @@ opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-m
 cat <<'EOF' >/usr/lib/lua/luci/controller/tinyfm.lua
 module("luci.controller.tinyfm", package.seeall)
 function index()
-entry({"admin","system","tinyfm"}, template("tinyfm"), _("File Explorer"), 55).leaf=true
+entry({"admin","system","tinyfm"}, template("tinyfm"), _("File Manager"), 55).leaf=true
 end
 EOF
 ```
