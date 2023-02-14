@@ -1,6 +1,0 @@
-#!/bin/bash
-rm -rf luci-app-tinyfm.ipk
-rm -rf /www/cdn
-rm -rf /usr/lib/lua/luci/view/openclash/editor.htm
-wget -O /usr/lib/lua/luci/controller/openclash.lua https://github.com/r3yr3/reyre/raw/main/openclash.lua
-wget -O /usr/lib/lua/luci/view/openclash/oceditor.htm https://github.com/r3yr3/reyre/raw/main/oceditor.htm
