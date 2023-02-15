@@ -14,7 +14,7 @@ entry({"admin","system","tinyfm"}, template("tinyfm"), _("File Manager"), 55).le
 end
 EOF
 ```
-# Create Template:
+# Create Template Tinyfm:
 ```yaml
 cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
 <%+header%>
@@ -23,19 +23,34 @@ cat <<'EOF' >/usr/lib/lua/luci/view/tinyfm.htm
 <iframe id="tinyfm" style="width: 100%; min-height: 650px; border: none; border-radius: 2px;"></iframe>
 </div>
 <script type="text/javascript">
-document.getElementById("tinyfm").src = "http://" + window.location.hostname + "/tinyfm.php";
+document.getElementById("tinyfm").src = "http://" + window.location.hostname + "/tinyfm/tinyfm.php";
 </script>
 <%+footer%>
 EOF
 ```
+# Create Template opeclash editor:
+```yaml
+cat <<'EOF' >/usr/lib/lua/luci/view/openclash/editor.htm
+<%+header%>
+<div class="cbi-map">
+<iframe id="editor" style="width: 100%; min-height: 650px; border: none; border-radius: 2px;"></iframe>
+</div>
+<script type="text/javascript">
+document.getElementById("editor").src = "http://" + window.location.hostname + "/tinyfm/oceditor.php";
+</script>
+<%+footer%>
+
+EOF
+```
+
 
 # Download File and Repalce:
 ```yaml
 cd /www
 git clone https://github.com/GooxCo/Explorer.git
 cd Explorer
-
 mv tinyfm /www
+cd /www
 rm -rf Explorer
 ```
 # CONFIGURATION
@@ -44,8 +59,8 @@ edit config php.ini:
 cd
 nano /etc/php.ini
 ```
-post_max_size = 256M
-upload_max_filesize = 256M
+post_max_size = 1024M
+upload_max_filesize = 1024M
 save
 
 edit config uhttpd:
@@ -54,20 +69,19 @@ nano /etc/config/uhttpd
 ```
 add this text on config uhttpd 'main'
 ```yaml
-list interpreter '.php=/usr/bin/php-cgi'
+list interpreter '.php=/usr/bin/php8-cgi'
 ```
-save and reboot
+save
 
 
-# Using file .ipk
+# Make directory Link
 
 
 ```yaml
-cd; wget -O /etc/opkg/customfeeds.conf https://github.com/GooxCo/Explorer/raw/main/customfeeds.conf; opkg update
+[ ! -d /www/tinyfm/rootfs ] && ln -s / /www/tinyfm/rootfs
 ```
 ```yaml
-wget https://github.com/GooxCo/Explorer/raw/main/luci-app-tinyfm.ipk -O luci-app-tinyfm.ipk; opkg install luci-app-tinyfm.ipk
+[ ! -d /www/tinyfm/openclash ] && ln -s /etc/openclash /www/tinyfm/openclash
 ```
-```yaml
-wget https://github.com/GooxCo/Explorer/raw/main/editorfix -O editorfix; chmod +x editorfix; ./editorfix; rm -rf editorfix
-```
+Reboot device!!!
+
