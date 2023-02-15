@@ -28,6 +28,14 @@ document.getElementById("tinyfm").src = "http://" + window.location.hostname + "
 <%+footer%>
 EOF
 ```
+# Creat Menu editor for openclash:
+```yaml
+nano /usr/lib/lua/luci/controller/openclash.lua
+```
+```yaml
+entry({"admin", "services", "openclash", "editor"},template("openclash/editor"),_("Config Editor"), 80).leaf = true
+```
+
 # Create Template opeclash editor:
 ```yaml
 cat <<'EOF' >/usr/lib/lua/luci/view/openclash/editor.htm
@@ -39,7 +47,6 @@ cat <<'EOF' >/usr/lib/lua/luci/view/openclash/editor.htm
 document.getElementById("editor").src = "http://" + window.location.hostname + "/tinyfm/oceditor.php";
 </script>
 <%+footer%>
-
 EOF
 ```
 
