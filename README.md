@@ -2,7 +2,7 @@
 
 # Manual Instalation needed :
 ```yaml
-opkg update && opkg install php7 php7-cgi php7-mod-session php7-mod-ctype php7-mod-fileinfo php7-mod-mbstring iconv php7-mod-json git git-http
+opkg update && opkg install php8 php8-cgi php8-mod-ctype php8-mod-fileinfo php8-mod-gettext php8-mod-gmp php8-mod-iconv php8-mod-mbstring php8-mod-pcntl php8-mod-session php8-mod-zip
 ```
 
 # Creat Menu:
@@ -34,7 +34,8 @@ EOF
 cd /www
 git clone https://github.com/GooxCo/Explorer.git
 cd Explorer
-mv tinyfm.php /www && mv cdn /www
+
+mv tinyfm /www
 rm -rf Explorer
 ```
 # CONFIGURATION
