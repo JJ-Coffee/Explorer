@@ -59,6 +59,7 @@ cd Explorer
 mv tinyfm /www
 cd /www
 rm -rf Explorer
+
 ```
 # CONFIGURATION
 edit config php.ini:
