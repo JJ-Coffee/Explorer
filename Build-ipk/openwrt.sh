@@ -153,8 +153,8 @@ pushd package/community
 
 # Add official OpenClash dev branch source
 # git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
-svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
-
+svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash vernesong/OpenClash
+svn co https://github.com/openwrt/openwrt/tree/5c7e4a9d2e25d5ecc33c3c2650e4f954936c9c69/package/network/services/dnsmasq openwrt/dnsmasq_full
 
 # Out to openwrt dir
 popd
