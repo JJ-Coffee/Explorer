@@ -128,7 +128,7 @@ jobs:
         run: |
           [ -e files ] && mv files $OPENWRT_ROOT_PATH/files
           cd $OPENWRT_ROOT_PATH
-          chmod +x $GITHUB_WORKSPACE/build-ipk/*.sh
+          chmod +x $GITHUB_WORKSPACE/Build-ipk/*.sh
           $GITHUB_WORKSPACE/$DIY_SH
           cat $GITHUB_WORKSPACE/$CONFIG_FILE >> $OPENWRT_ROOT_PATH/.config
           echo -e "===== List of Config Files ====="
