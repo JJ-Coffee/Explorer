@@ -189,7 +189,7 @@ jobs:
           # Set LuCI Theme and App Path
           echo "LUCITHEMEPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/luci-theme" >> $GITHUB_ENV
           echo "LUCIAPPPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/luci-app" >> $GITHUB_ENV
-          echo "PKGPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/packages" >> $GITHUB_ENV
+          echo "PKGPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/dnsmasq" >> $GITHUB_ENV
           echo "JJWrt=$GITHUB_WORKSPACE/openwrt/bin/packages/JJWrt" >> $GITHUB_ENV
           # Checking Files and places
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
