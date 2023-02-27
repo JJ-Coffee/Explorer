@@ -15,7 +15,7 @@ jobs:
     - name: Install build dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install build-essential libssl-dev libncurses5-dev zlib1g-dev gawk git ccache gettext wget unzip python3
+        sudo apt-get -y install build-essential libssl-dev libncurses5-dev zlib1g-dev gawk git ccache gettext wget unzip python python3
 
     - name: Prepare OpenWrt environment
       run: |
@@ -27,5 +27,12 @@ jobs:
     - name: Compile package
       run: |
         cd /tmp/openwrt
-        make defconfig
-        make package/dnsmasq/compile V=s
+        make tools/install
+        make toolchain/install
+		make package/libc/compile
+        make package/libubus20210630/compile
+		make package/libnettle8/compile
+        make package/kmod-ipt-ipset/compile
+		make package/libnetfilter-conntrack3/compile
+		make package/dnsmasq_full/compile
+		make package/index
