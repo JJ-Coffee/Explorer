@@ -29,10 +29,10 @@ jobs:
         cd /tmp/openwrt
         make tools/install
         make toolchain/install
-	make package/libc/compile
+        make package/libc/compile
         make package/libubus20210630/compile
-	make package/libnettle8/compile
+        make package/libnettle8/compile
         make package/kmod-ipt-ipset/compile
-	make package/libnetfilter-conntrack3/compile
-	make package/dnsmasq_full/compile
-	make package/index
+        make package/libnetfilter-conntrack3/compile
+        make package/dnsmasq_full/compile
+        make package/index
