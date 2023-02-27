@@ -1,0 +1,40 @@
+name: Build OpenWrt IPK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libncurses5-dev zlib1g-dev libssl-dev wget git
+
+    - name: Download OpenWrt Source Code
+      run: |
+        git clone --depth 1 --branch openwrt-21.02 https://github.com/openwrt/openwrt.git
+
+    - name: Configure OpenWrt
+      run: |
+        cd openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        make defconfig
+
+    - name: Build OpenWrt Package
+      run: |
+        cd openwrt
+        make package/<package_name>/compile V=s
+
+    - name: Upload IPK
+      uses: actions/upload-artifact@v2
+      with:
+        name: <package_name>-<commit_hash>
+        path: openwrt/bin/packages/<arch>/packages/<package_name>_*.ipk
