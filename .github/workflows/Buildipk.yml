@@ -15,7 +15,7 @@ jobs:
     - name: Install build dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install build-essential libssl-dev libncurses5-dev zlib1g-dev gawk git ccache gettext wget unzip python python3
+        sudo apt-get -y install build-essential libssl-dev libncurses5-dev zlib1g-dev gawk git ccache gettext wget unzip python3
 
     - name: Prepare OpenWrt environment
       run: |
