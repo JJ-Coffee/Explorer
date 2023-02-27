@@ -1,3 +1,4 @@
 #OpenClash Packages
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_dnsmasq_full=y
+CONFIG_PACKAGE_dnsmasq=n
