@@ -19,7 +19,7 @@ jobs:
 
     - name: Download OpenWrt Source Code
       run: |
-        git clone --depth 1 --branch openwrt-21.02 https://github.com/openwrt/openwrt.git
+        git clone --depth 1 --branch master https://github.com/openwrt/openwrt.git
 
     - name: Configure OpenWrt
       run: |
