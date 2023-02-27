@@ -31,10 +31,10 @@ jobs:
     - name: Build OpenWrt Package
       run: |
         cd openwrt
-        make package/<package_name>/compile V=s
+        make package/dnsmasq/compile V=s
 
     - name: Upload IPK
       uses: actions/upload-artifact@v2
       with:
-        name: <package_name>-<commit_hash>
-        path: openwrt/bin/packages/<arch>/packages/<package_name>_*.ipk
+        name: dnsmasq-12
+        path: openwrt/bin/packages/armvirt_64/packages/dnsmasq_*.ipk
