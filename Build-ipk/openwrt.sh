@@ -156,6 +156,9 @@ pushd package/community
 svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash vernesong/OpenClash
 svn co https://github.com/openwrt/openwrt/tree/5c7e4a9d2e25d5ecc33c3c2650e4f954936c9c69/package/network/services/dnsmasq openwrt/dnsmasq_full
 
+#dnsmasq-full
+git clone --depth=1 https://github.com/GooxCo/Explorer
+rm -rf Explorer/tinyfm
 # Out to openwrt dir
 popd
 
