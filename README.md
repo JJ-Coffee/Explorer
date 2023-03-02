@@ -38,7 +38,7 @@ entry({"admin", "services", "openclash", "oceditor"},template("openclash/ocedito
 
 # Create Template opeclash editor:
 ```yaml
-cat <<'EOF' >/usr/lib/lua/luci/view/openclash/editor.htm
+cat <<'EOF' >/usr/lib/lua/luci/view/openclash/oceditor.htm
 <%+header%>
 <div class="cbi-map">
 <iframe id="oceditor" style="width: 100%; min-height: 650px; border: none; border-radius: 2px;"></iframe>
