@@ -33,7 +33,7 @@ EOF
 nano /usr/lib/lua/luci/controller/openclash.lua
 ```
 ```yaml
-entry({"admin", "services", "openclash", "editor"},template("openclash/editor"),_("Config Editor"), 80).leaf = true
+entry({"admin", "services", "openclash", "oceditor"},template("openclash/oceditor"),_("Config Editor"), 80).leaf = true
 ```
 
 # Create Template opeclash editor:
@@ -41,10 +41,10 @@ entry({"admin", "services", "openclash", "editor"},template("openclash/editor"),
 cat <<'EOF' >/usr/lib/lua/luci/view/openclash/editor.htm
 <%+header%>
 <div class="cbi-map">
-<iframe id="editor" style="width: 100%; min-height: 650px; border: none; border-radius: 2px;"></iframe>
+<iframe id="oceditor" style="width: 100%; min-height: 650px; border: none; border-radius: 2px;"></iframe>
 </div>
 <script type="text/javascript">
-document.getElementById("editor").src = "http://" + window.location.hostname + "/tinyfm/oceditor.php";
+document.getElementById("oceditor").src = "http://" + window.location.hostname + "/tinyfm/oceditor.php";
 </script>
 <%+footer%>
 EOF
