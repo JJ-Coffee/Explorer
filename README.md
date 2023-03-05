@@ -54,7 +54,7 @@ EOF
 # Download File and Repalce:
 ```yaml
 cd /www
-git clone https://github.com/GooxCo/Explorer.git
+git clone https://github.com/JJ-Coffee/Explorer.git
 cd Explorer
 mv tinyfm /www
 cd /www
